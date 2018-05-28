@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemGenerator : MonoBehaviour {
+public class EveryItemGenerator : MonoBehaviour {
 
 	// carPrefabを入れる
 	public GameObject carPrefab;
@@ -26,7 +26,7 @@ public class ItemGenerator : MonoBehaviour {
 	private GameObject unityChan;
 
 	// UnityChanのZ軸座標を格納
-	private int unityChanZ;
+	private float unityChanZ;
 
 	// アイテムを置く間隔
 	private int itemInterval = 15;
@@ -43,12 +43,13 @@ public class ItemGenerator : MonoBehaviour {
 	void Update () {
 
 		// UnityChanのZ軸
-		unityChanZ = (int)unityChan.transform.position.z;
+		unityChanZ = unityChan.transform.position.z;
 
 
 		// UnityChanの位置から+40の位置まで、かつゴールまでの位置にオブジェクトを生成
 
-		if (unityChanZ >= startPos - 40) {
+		if (unityChanZ >= startPos - 40 && startPos < goalPos) {
+			
 			// どのアイテムを出すのかをランダムに設定
 			int num = Random.Range (0, 10);
 

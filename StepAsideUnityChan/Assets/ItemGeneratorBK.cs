@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EveryItemGenerator : MonoBehaviour {
+public class ItemGeneratorBK : MonoBehaviour {
 
 	// carPrefabを入れる
 	public GameObject carPrefab;
